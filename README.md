@@ -1,2 +1,2 @@
 # Brain-Clutter
-Yeet
+Yeet Brain Notes App
