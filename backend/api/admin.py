@@ -1,7 +1,11 @@
 from django.contrib import admin
-from .models import BaseModel, User, Note, Drawing
+from django.apps import apps
+from django.contrib.admin.sites import AlreadyRegistered
 
-# Register your models here.
-admin.site.register(User)
-admin.site.register(Note)
-admin.site.register(Drawing)
+models = apps.get_models()
+
+for model in models:
+    try:
+        admin.site.register(model)
+    except AlreadyRegistered:
+        pass
