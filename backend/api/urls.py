@@ -1,6 +1,13 @@
-from django.urls import path
-from . import views
+from django.urls import include, path
+from rest_framework import routers
 
-app_name = "api"
-from rest_framework import renderers
+from api import views
 
+router = routers.SimpleRouter()
+router.register('users', views.UserViewSet)
+router.register('notes', views.NoteViewSet)
+router.register('drawings', views.DrawingViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
