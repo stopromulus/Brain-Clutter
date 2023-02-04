@@ -1,1 +1,1 @@
-<p class="text-3xl text-red-600">Hello, world!</p>
+<p class="text-3xl text-red-500">Hello, world!</p>
