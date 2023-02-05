@@ -2,29 +2,15 @@
     import calendarimage from '$lib/images/calendar-image.png';
     import notesicon from '$lib/images/note-icon.png';
     import listicon from '$lib/images/list-icon.png';
+    import Iconbutton from './iconbutton.svelte';
 </script>
 
-<h1 class="text-center text-2xl">Brain Clutter</h1>
+<h1 class="text-center text-2xl mb-10">Brain Clutter</h1>
 
 <div class="font-serif">
-    <button class="center ml-20">
-        <div class=" border-solid border-2">
-            Calendar 
-            <img src={calendarimage} alt="Calendar Icon" class="w-16">
-        </div>
-    </button>
-
-    <button class="center">
-        <div class="border-solid border-2">
-         Notes 
-            <img src={notesicon} alt="Notes Icon" class="w-16">
-        </div>
-    </button>
-
-    <button class="center">
-        <div class=" border-solid border-2">
-            List 
-            <img src={listicon} alt="Notes Icon" class="w-16">
-        </div>
-    </button> 
+    <div class="grid grid-cols-3 justify-items-center">
+        <Iconbutton name="calendar" src={calendarimage} alt="Calendar icon"></Iconbutton>
+        <Iconbutton name="notes" src={notesicon} alt="Notes icon"></Iconbutton>
+        <Iconbutton name="list" src={listicon} alt="List icon"></Iconbutton>
+    </div>
 </div>
