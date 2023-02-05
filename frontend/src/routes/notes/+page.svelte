@@ -10,6 +10,15 @@
         return [x, y, x + width, y + height];
     }
 
+    function checkDoesOverlap(noteBox) {
+        const [aX1, aY1, aX2, aY2] = toRect(noteBox);
+
+        return !!noteBoxes.filter(nb => {
+            const [bX1, bY1, bX2, bY2] = toRect(nb);
+            return aX2 >= bX1 && aX1 <= bX2 && aY1 <= bY2 && aY2 >= bY1;
+        }).length;
+    }
+
     function addNoteBox(ev) {
         let noteBox = {
             id: null,
@@ -22,12 +31,7 @@
             y: ev.pageY - 50
         };
 
-        const [aX1, aY1, aX2, aY2] = toRect(noteBox);
-
-        if (noteBoxes.filter(nb => {
-            const [bX1, bY1, bX2, bY2] = toRect(nb);
-            return aX2 >= bX1 && aX1 <= bX2 && aY1 <= bY2 && aY2 >= bY1;
-        }).length) return;
+        if (checkDoesOverlap(noteBox)) return;
 
         fetch(`${PUBLIC_API_URL}/notes/`, {
             method: 'POST',
@@ -36,10 +40,8 @@
             }),
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
         }).then(res => res.json()).then(res => {
-            console.log(res);
             noteBox.id = res.id;
             noteBoxes = [...noteBoxes, noteBox];
             setTimeout(() => {
@@ -68,7 +70,7 @@
         };
     }
 
-    const debouncedSave = debounce(saveNoteBox, 300);
+    const debouncedSave = debounce(saveNoteBox, 400);
 </script>
 
 <div class="relative h-screen" on:click|self={addNoteBox}>
@@ -81,10 +83,6 @@
         <div
             class="border-2 min-h-[2.8rem] border-gray-400 absolute rounded-lg overflow-hidden focus-within:resize focus-within:border-blue-500 p-2 bg-gray-700"
             style="top:{noteBox.y}px; left:{noteBox.x}px; width:{noteBox.width}px; height:{noteBox.height}px;"
-            use:resize={[writable(), el => {
-                noteBox.width = el.offsetWidth;
-                noteBox.height = el.offsetHeight;
-            }]}
         >
             <textarea
                 bind:this={noteBox.el}
