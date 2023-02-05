@@ -1,3 +1,2 @@
 # Brain-Clutter
-Yeet Brain Notes App
-MILO LOOK I CLONED THINGS
+Website that allows for note-taking, a calendar, and ambient meditation
