@@ -4,10 +4,13 @@
     // import listicon from '$lib/images/list-icon.png';
     import meditationicon from '$lib/images/meditation-icon.png';
     import Iconbutton from './iconbutton.svelte';
+    import Header from './header.svelte';
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+<Header></Header>
 
 <style>
     h1 {
