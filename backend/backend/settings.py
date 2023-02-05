@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-uuh3exk-dpn=&=mk7-$om($_8g6(7hl=#)m$w%2kvp&6_$3r_*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['brainclutter.tech']
 
 
 # Application definition
