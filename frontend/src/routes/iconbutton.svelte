@@ -5,7 +5,7 @@
     export let link="";
 </script>
 
-<a href={link} class="rounded-lg overflow-hidden border-solid border-2 shadow-lg p-2 items-center w-24">
+<a href={link} class="rounded-lg overflow-hidden border-solid border-2 shadow-lg p-2 items-center w-36">
     <h4 class="text-center">{name}</h4>
     <img src={src} alt={alt} class="">
 </a>
