@@ -99,7 +99,7 @@
                         noteBoxes = noteBoxes.filter((_, i) => i !== idx);
                     })
                 }}
-                class="absolute text-xs top-[-2.5px] right-[0.3px] select-none cursor-pointer text-gray-600 hover:text-red-500 hover:font-bold text-white"
+                class="absolute text-xs top-[-2.5px] right-[0.3px] select-none cursor-pointer hover:text-red-500 hover:font-bold text-white"
             >
                 X
             </span>
