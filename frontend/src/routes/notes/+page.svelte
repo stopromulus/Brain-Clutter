@@ -47,6 +47,28 @@
             });
         })
     }
+
+    async function saveNoteBox(noteBox) {
+        await fetch(`${PUBLIC_API_URL}/notes/${noteBox.id}/`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                content: noteBox.content, width: noteBox.width, height: noteBox.height, x: noteBox.x, y: noteBox.y
+            }),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+        })
+    }
+
+    function debounce(func, timeout = 300){
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { func.apply(this, args); }, timeout);
+        };
+    }
+
+    const debouncedSave = debounce(saveNoteBox, 300);
 </script>
 
 <div class="relative h-screen" on:click|self={addNoteBox}>
@@ -57,29 +79,19 @@
     {/if}
     {#each noteBoxes as noteBox, idx}
         <div
-            class="border-2 min-h-[2.8rem] border-gray-400 absolute rounded-lg overflow-hidden focus-within:resize focus-within:border-blue-500 p-2 bg-white"
+            class="border-2 min-h-[2.8rem] border-gray-400 absolute rounded-lg overflow-hidden focus-within:resize focus-within:border-blue-500 p-2 bg-gray-700"
             style="top:{noteBox.y}px; left:{noteBox.x}px; width:{noteBox.width}px; height:{noteBox.height}px;"
             use:resize={[writable(), el => {
                 noteBox.width = el.offsetWidth;
                 noteBox.height = el.offsetHeight;
             }]}
-            on:focusout={(ev) => {
-                fetch(`${PUBLIC_API_URL}/notes/${noteBox.id}/`, {
-                    method: 'PUT',
-                    body: JSON.stringify({
-                        content: noteBox.content, width: noteBox.width, height: noteBox.height, x: noteBox.x, y: noteBox.y
-                    }),
-                    headers: {
-                      'Content-Type': 'application/json',
-                    },
-                })
-            }}
         >
             <textarea
                 bind:this={noteBox.el}
                 bind:value={noteBox.content}
+                on:input={() => debouncedSave(noteBox)}
                 placeholder="Type here!"
-                class="w-full h-full !outline-0 resize-none"
+                class="w-full h-full !outline-0 resize-none bg-gray-700"
             ></textarea>
             <span
                 on:click={() => {
@@ -89,7 +101,7 @@
                         noteBoxes = noteBoxes.filter((_, i) => i !== idx);
                     })
                 }}
-                class="absolute text-xs top-[-2.5px] right-[0.3px] select-none cursor-pointer text-gray-600 hover:text-red-500 hover:font-bold"
+                class="absolute text-xs top-[-2.5px] right-[0.3px] select-none cursor-pointer text-gray-600 hover:text-red-500 hover:font-bold text-white"
             >
                 X
             </span>
