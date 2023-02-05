@@ -12,14 +12,6 @@
 
 <Header></Header>
 
-<style>
-    h1 {
-        font-family: 'Roboto Mono', monospace;
-    }
-    div {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
 
 <h1 class="text-center text-8xl mb-10 pt-32 pb-20 tracking-tighter">Brain Clutter</h1>
 
