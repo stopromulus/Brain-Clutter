@@ -8,13 +8,16 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
 <Header></Header>
 
 <style>
     h1 {
         font-family: 'Roboto Mono', monospace;
+    }
+    div {
+        font-family: 'Poppins', sans-serif;
     }
 </style>
 
