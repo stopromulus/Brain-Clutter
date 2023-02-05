@@ -6,7 +6,7 @@
     import Iconbutton from './iconbutton.svelte';
 </script>
 
-<h1 class="text-center text-8xl mb-10 underline underline-offset-8">Brain Clutter</h1>
+<h1 class="text-center text-8xl mb-10 underline underline-offset-8 pt-32 pb-20">Brain Clutter</h1>
 
 <div class="font-serif">
     <div class="grid grid-cols-3 justify-items-center">
