@@ -5,8 +5,17 @@
     import meditationicon from '$lib/images/meditation-icon.png';
     import Iconbutton from './iconbutton.svelte';
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
-<h1 class="text-center text-8xl mb-10 underline underline-offset-8 pt-32 pb-20">Brain Clutter</h1>
+<style>
+    h1 {
+        font-family: 'Roboto Mono', monospace;
+    }
+</style>
+
+<h1 class="text-center text-8xl mb-10 pt-32 pb-20 tracking-tighter">Brain Clutter</h1>
 
 <div class="font-serif">
     <div class="grid grid-cols-3 justify-items-center">
