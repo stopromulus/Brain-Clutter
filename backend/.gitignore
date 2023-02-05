@@ -1,3 +1,4 @@
 db.sqlite3
 .env
 chatgpt.py
+__pycache__/
