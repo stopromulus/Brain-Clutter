@@ -22,6 +22,6 @@
         <Iconbutton name="calendar" src={calendarimage} alt="Calendar icon"></Iconbutton>
         <Iconbutton name="notes" src={notesicon} alt="Notes icon" link="/notes"></Iconbutton>
         <!-- <Iconbutton name="list" src={listicon} alt="List icon"></Iconbutton> -->
-        <Iconbutton name="meditation" src={meditationicon} alt="Meditation "></Iconbutton>
+        <Iconbutton name="meditation" src={meditationicon} alt="Meditation" link="/meditation"></Iconbutton>
     </div>
 </div>
