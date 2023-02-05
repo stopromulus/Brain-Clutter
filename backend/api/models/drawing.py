@@ -1,9 +1,7 @@
 from django.db import models
 
-from api.models.base_model import BaseModel
+from api.models.base_models import BaseComponent
 
 
-class Drawing(BaseModel):
+class Drawing(BaseComponent):
     content = models.BinaryField()
-    x_loc = models.FloatField()
-    y_loc = models.FloatField()

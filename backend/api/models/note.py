@@ -1,9 +1,9 @@
 from django.db import models
 
-from api.models.base_model import BaseModel
+from api.models.base_models import BaseComponent
 
 
-class Note(BaseModel):
-    content = models.TextField()
-    x_loc = models.FloatField()
-    y_loc = models.FloatField()
+class Note(BaseComponent):
+    content = models.TextField(blank=True)
+    width = models.FloatField()
+    height = models.FloatField()
