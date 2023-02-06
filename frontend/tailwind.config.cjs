@@ -4,7 +4,7 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     fontFamily: {
-      body: ["Poppins", "sans-serif"],
+      body: ["figtree", "sans-serif"],
     },
     extend: {},
   },

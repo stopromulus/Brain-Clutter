@@ -1,10 +1,15 @@
+/* Figtree font regular 400 */
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+/*  */
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap" rel="stylesheet');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
     html {
-        font-family: serif;
+        font-family: 'Figtree', sans-serif;
     }
 
 }
