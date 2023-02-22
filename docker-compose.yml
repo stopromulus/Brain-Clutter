@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  backend:
+    env_file: backend/.env
+    build:
+      context: backend/
+    ports:
+      - "27246:8000"
+    volumes:
+      - type: bind
+        source: ./backend/db.sqlite3
+        target: /Brain-Clutter/backend/db.sqlite3
+    init: true
+  frontend:
+    env_file: frontend/.env
+    build:
+      context: frontend/
+    ports:
+      - "27247:3000"
+    init: true
