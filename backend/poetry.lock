@@ -177,6 +177,14 @@ embeddings = ["matplotlib", "numpy", "openpyxl (>=3.0.7)", "pandas (>=1.2.3)", "
 wandb = ["numpy", "openpyxl (>=3.0.7)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1.0.11)", "wandb"]
 
 [[package]]
+name = "python-decouple"
+version = "3.7"
+description = "Strict separation of settings from code."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pytz"
 version = "2022.7.1"
 description = "World timezone definitions, modern and historical"
@@ -284,7 +292,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "68aa91468cfe40badf1c002b24bd9d1cafc121dea73ca03514914c3066c931f4"
+content-hash = "5153017bdf8cbe80696f5adac7e95872e49ab5e8762e588bd0a400ba0095a57f"
 
 [metadata.files]
 aiohttp = [
@@ -538,6 +546,10 @@ multidict = [
 ]
 openai = [
     {file = "openai-0.26.4.tar.gz", hash = "sha256:168813319a1422cb71a5005f9e404065483556cea52c9ccbfb838cda134087a7"},
+]
+python-decouple = [
+    {file = "python-decouple-3.7.tar.gz", hash = "sha256:e88a8d6bdf3b07d471a854099e455e20a6fa7a4d6ecf8631b250e3db654336e6"},
+    {file = "python_decouple-3.7-py3-none-any.whl", hash = "sha256:1596dad2670cca5b1f87d087d9adb6a1958c590df346b85d4b19a9d6f0d52cef"},
 ]
 pytz = [
     {file = "pytz-2022.7.1-py2.py3-none-any.whl", hash = "sha256:78f4f37d8198e0627c5f1143240bb0206b8691d8d7ac6d78fee88b78733f8c4a"},
