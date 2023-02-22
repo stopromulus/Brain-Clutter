@@ -20,6 +20,7 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.2.1",
 		"@fortawesome/free-solid-svg-icons": "^6.2.1",
+		"@sveltejs/adapter-node": "^1.2.0",
 		"svelte-fa": "^3.0.3"
 	}
 }
