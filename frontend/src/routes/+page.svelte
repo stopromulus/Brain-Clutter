@@ -21,3 +21,4 @@
     <!-- <Iconbutton name="list" src={listicon} alt="List icon"></Iconbutton> -->
     <Iconbutton name="meditation" src={meditationicon} alt="Meditation" link="/meditation"></Iconbutton>
 </div>
+
